@@ -1,0 +1,129 @@
+<div class="inner-content">
+    <form (ngSubmit)="saveClotheDisplay()" [formGroup]="clotheDisplayForm" class="form" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title d-flex justify-content-between align-items-center mb-4">
+                    <h1> {{ isEditMode ? 'Update' : 'Add' }} Clothe</h1>
+                </div>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-flex d-flex justify-content-between align-items-center">
+                            <h2>Clothe Information</h2>
+                        </div>
+                    </div>
+                    <div class="card-body tenantInfoAdd">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12  mb-4">
+                                <div class="tenantInfoLogo">
+                                    <input (change)="onFileSelected($event)" class="form-control" id="browsePhoto"
+                                           type="file">
+                                    <label for="browsePhoto"><i class="bi bi-camera-fill"></i></label>
+                                    <app-image [alt]="imageUrl" [src]="imageUrl" [title]="imageUrl"></app-image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-8 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="clotheName"
+                                    inputType="text" label="Clothe Name"
+                                    placeholder="Clothe Name"
+                                    requiredMessage="Clothe Name is required">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
+                                <app-form-textarea-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="price"
+                                    label="Cloth Price"
+                                    placeholder="Cloth Price"
+                                    requiredMessage="Cloth Price is required">
+                                </app-form-textarea-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="discription"
+                                    inputType="text"
+                                    label="Discription"
+                                    placeholder="Discription">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="quantity"
+                                    inputType="text"
+                                    label="Quantity"
+                                    placeholder="Quantity">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="typeOfMaterial"
+                                    inputType="text"
+                                    label="Type Of Material"
+                                    placeholder="Type Of Material">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="discount"
+                                    inputType="text"
+                                    label="Discount"
+                                    placeholder="Discount"
+                                    requiredMessage="Discount is required">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="manufacturer"
+                                    inputType="text"    
+                                    label="Manufacturer"
+                                    placeholder="Manufacturer"
+                                    requiredMessage="Manufacturer is required">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex gap-4">
+                                <div class="form-check custom-checkbox">
+                                    <input class="form-check-input" formControlName="isActive" type="checkbox">
+                                    <label class="form-check-label">Status?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="pull-right d-flex gap-2">
+                    <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                    <a (click)="onCancel()" class="btn btn-outline-primary btn-sm">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

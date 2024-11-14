@@ -1,0 +1,94 @@
+<div class="inner-content">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title d-flex justify-content-between align-items-center mb-4">
+                <h1>Customer</h1>
+                <a class="btn btn-primary btn-sm" href='/customer/add'>Add New</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-flex d-flex justify-content-between align-items-center">
+                        <h2>Customer List</h2>
+                        <div class="searchBox">
+                            <button class="btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <input (input)="onSearch($event)" class="form-control" placeholder="Search Route"
+                                type="search" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>                                                     
+                                <th>Last Name</th>                                                     
+                                <th>User Name</th>                                                     
+                                <th>Password</th>                                                     
+                                <th>Email Addrerss</th>                                                     
+                                <th>Approved</th>                                                     
+                                <th>Phone No</th>                                                     
+                                <th>Address</th>                                                     
+                                <th>Country</th>                                                     
+                                <th>State</th>
+                                <th>City</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (customer of customerList.customerDtoinfo; track customer.custId; let
+                            i = $index) {
+                            <tr>
+                                <td>{{ customer.custId }}</td>
+                                <td>{{ customer.custFirstName }}</td>
+                                <td>{{ customer.custLastName }}</td>
+                                <td>{{ customer.custUserName }}</td>
+                                <td>{{ customer.custPassword }}</td>
+                                <td>{{ customer.custEmailAddrerss }}</td>
+                                <td><span [innerHTML]="customer.custApproved? activeStatus : inactiveStatus"></span></td>
+                                <td>{{ customer.custPhoneNo }}</td>
+                                <td>{{ customer.custAddress }}</td>
+                                <td>{{ customer.custCountry }}</td>
+                                <td>{{ customer.custState }}</td>
+                                <td>{{ customer.custCity }}</td>
+                                <td><span [innerHTML]="customer.isActive? activeStatus : inactiveStatus"></span>
+                                </td>
+                                <td>
+                                    <div class="tblAction">
+                                        <a (click)="editRecord(customer.custId)"><i class="bi bi-pencil"></i></a>
+                                        <a (click)="deleteRecord(customer.custId)"><i class="bi bi-trash3"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            } @empty {
+                            <tr>
+                                <td colspan="4" style="text-align: center">
+                                    No record found
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between p-2">
+                        <app-page-size (pageSizeChange)="onPageSizeChange($event)" [defaultPageSize]="pageSize"
+                            [isDisabled]="customerList.totalRecords === 0">
+                        </app-page-size>
+                        <ngb-pagination (pageChange)="onPageChange($event)" [(page)]="page"
+                            [collectionSize]="customerList.totalRecords" [pageSize]="pageSize" [maxSize]="5"
+                            [rotate]="true" [ellipses]="true" [boundaryLinks]="true">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

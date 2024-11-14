@@ -1,0 +1,160 @@
+<div class="inner-content">
+    <form (ngSubmit)="saveCustomer()" [formGroup]="customerForm" class="form" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title d-flex justify-content-between align-items-center mb-4">
+                    <h1> {{ isEditMode ? 'Update' : 'Create' }} Customer</h1>
+                </div>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-flex d-flex justify-content-between align-items-center">
+                            <h2>Customer Information</h2>
+                        </div>
+                    </div>
+                    <div class="card-body tenantInfoAdd">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-8 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custFirstName"
+                                    inputType="text" label="Customer First Name"
+                                    placeholder="Customer First Name"
+                                    requiredMessage="Customer First Name is required">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
+                                <app-form-textarea-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custLastName"
+                                    label="Customer Last Name"
+                                    placeholder="Customer Last Name"
+                                    requiredMessage="Customer Last Name is required">
+                                </app-form-textarea-input>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-email-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custEmailAddrerss"
+                                    inputType="text"
+                                    label="Customer Email Address"
+                                    placeholder="Customer Email Address"
+                                    invalidMessage="Please Enter Valid Email."
+                                    requiredMessage="Customer Email Address is required">
+                                </app-form-email-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custUserName"
+                                    label="Customer User Name"
+                                    placeholder="Customer User Name"
+                                    requiredMessage="Customer User Name is required">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custPassword"
+                                    label="Customer Password"
+                                    placeholder="Customer Password"
+                                    requiredMessage="Customer Password is required">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="custPhoneNo"
+                                    inputType="text"
+                                    label="Customer Phone Number"
+                                    placeholder="Customer Phone Number">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="custAddress"
+                                    inputType="text"
+                                    label="Customer Address"
+                                    placeholder="Customer Address">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [submitted]="submitted"
+                                    formControlName="custCountry"
+                                    inputType="text"
+                                    label="Customer Country"
+                                    placeholder="Customer Country">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custState"
+                                    inputType="text"
+                                    label="Customer City"
+                                    placeholder="Customer City"
+                                    requiredMessage="Customer City is required">
+                                </app-form-text-input>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 mb-4">
+                                <app-form-text-input
+                                    [required]="true"
+                                    [submitted]="submitted"
+                                    formControlName="custCity"
+                                    inputType="text"
+                                    label="Currency Symbol"
+                                    placeholder="Currency Symbol"
+                                    requiredMessage="Currency symbol is required">
+                                </app-form-text-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex gap-4">
+                                <div class="form-check custom-checkbox">
+                                    <input class="form-check-input" formControlName="isActive" type="checkbox">
+                                    <label class="form-check-label">Status</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12 d-flex gap-4">
+                                <div class="form-check custom-checkbox">
+                                    <input class="form-check-input" formControlName="custApproved" type="checkbox">
+                                    <label class="form-check-label">Costomer Approved</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="pull-right d-flex gap-2">
+                    <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                    <a (click)="onCancel()" class="btn btn-outline-primary btn-sm">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

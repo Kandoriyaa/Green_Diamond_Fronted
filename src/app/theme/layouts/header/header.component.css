@@ -1,0 +1,44 @@
+/*::ng-deep app-header { width: 100%; position: fixed; top: 0; z-index: 999999;}*/
+app-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.slideMenu {
+    width: 280px;
+    height: 100%;
+}
+
+app-side-menu {
+    height: 100%;
+    padding-top: 70px;
+}
+
+/* ::ng-deep .page .contentArea { flex-direction: column; } */
+
+.page .contentArea {
+    min-height: calc(100% - 70px);
+}
+
+.page .main {
+    min-height: 100%;
+    padding-top: 70px;
+}
+
+.inner-content {
+    min-height: calc(100% - 58px);
+}
+
+.offcanvas {
+    width: 300px !important;
+}
+
+.company-title {
+    font-size: 16px;
+}
+
+.company-title span {
+    color: var(--primaryColor);
+}

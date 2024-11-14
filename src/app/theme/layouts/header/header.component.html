@@ -1,0 +1,80 @@
+<div class="header">
+  <div class="headerLogoBox">
+    <div class="logo">
+      <img alt="GreenDiamond" src="assets/images/greendiamond-high-resolution-logo12.png" title="Woopsa - SAAS ERP"
+        height="20" width="220">
+    </div>
+    <div class="bars">
+      <a href="javascript:" class="pc-head-link ms-0" id="mobile-collapse1" (click)="this.NavCollapsedMob.emit()">
+        <i antIcon type="menu-fold" theme="outline"></i>
+      </a>
+      <div class="searchbox">
+        <li class="pc-h-item d-none d-md-inline-flex">
+          <form class="header-search">
+            <!-- <i class="search f-12" antIcon type="search" theme="outline"></i> -->
+            <input type="search" class="form-control" placeholder="Ctrl + K" />
+          </form>
+        </li>
+      </div>
+    </div>
+    
+    <div class="slideMenuRight slide-menu-right" style="padding-left: 1155px;">
+      <ul class="list-unstyled">
+        <li class="dropdown pc-h-item header-user-profile" ngbDropdown>
+          <a class="pc-head-link dropdown-toggle arrow-none me-0" ngbDropdownToggle>
+            <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar me-2"
+              style="border-radius: 100%;" height="80" width="60" />
+            <span class="f-w-600">John Doe</span>
+          </a>
+          <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown" ngbDropdownMenu>
+            <div class="dropdown-header">
+              <div class="d-flex mb-1">
+                <div class="flex-shrink-0">
+                  <img src="assets/images/user/avatar-2.jpg" alt="user-image" class="user-avatar wid-35" />
+                </div>
+                <a href="javascript:" class="bg-transparent"><i class="d-flex f-20" antIcon theme="outline"
+                    type="logout"></i></a>
+              </div>
+              <div class="flex-grow-1 ms-3 text-start">
+                <h6 class="mb-0">JWT User</h6>
+                <span>UI/UX Designer</span>
+              </div>
+              <ul ngbNav #nav="" class="nav drp-tabs nav-fill nav-tabs">
+                <li ngbNavItem="1">
+                  <ng-template ngbNavContent>
+                    <div class="slideMenuRight slide-menu-right">
+                      @for (task of profile; track task) {
+                        <div>
+                          <a class="dropdown-item">
+                            <i class="text-muted bi {{ task.icon }}"></i> <!-- Use the class binding here -->
+                            <span>{{ task.title }}</span>
+                          </a>
+                        </div>
+                        }
+                        @for (task of setting; track task) {
+                        <div>
+                          <a class="dropdown-item">
+                            <i class="text-muted {{ task.icon }}"></i>
+                            <span>{{ task.title }}</span>
+                          </a>
+                        </div>
+                        }
+                        <div>
+                          <a class="dropdown-item">
+                            <i class="text-muted" antIcon theme="outline" type="logout"></i>
+                            <span>Logout</span>
+                          </a>
+                        </div>
+                    </div>
+                  </ng-template>
+                </li>
+              </ul>
+              <div *[ngbNavOutlet]="nav"></div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

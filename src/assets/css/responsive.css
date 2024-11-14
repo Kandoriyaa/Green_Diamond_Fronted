@@ -1,0 +1,173 @@
+@media only screen and (max-width: 1800px) { }
+@media only screen and (max-width: 1680px) { 
+    .table-scroll-lg-xxl { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-lg-xxl table { width: 1800px; }
+}
+@media only screen and (max-width: 1660px) {
+    .rdecentOrdersBox-db table th:nth-child(3),
+    .rdecentOrdersBox-db table td:nth-child(3) { display: none;}
+ }
+@media only screen and (max-width: 1540px) {
+    .table-scroll-lg-xl { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-lg-xl table { width: 1666px; }
+ }
+@media only screen and (max-width: 1440px) { 
+    .rdecentOrdersBox-db table th:nth-child(9),
+    .rdecentOrdersBox-db table td:nth-child(9) { display: none;}
+}
+@media only screen and (max-width: 1439px) { 
+    .table-scroll-lg-l { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-lg-l table { width: 1440px; }
+
+    .rdecentOrdersBox-db table th:nth-child(5),
+    .rdecentOrdersBox-db table td:nth-child(5) { display: none;}
+}
+@media only screen and (max-width: 1366px) {  }
+@media only screen and (max-width: 1365px) { 
+    .table-scroll-lg { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-lg table { width: 1366px; }
+}
+@media only screen and (max-width: 1281px) { 
+    .header { background-color: var(--white);}
+    .page .main { width: 100%; }
+    .page .slideMenu { width: 0 ; max-width: 0;}
+    .nav { opacity: 0;}
+    .slide-menu  .page .main { width: calc(100% - 280px); }
+    .slide-menu .page .slideMenu { width: 280px; max-width: 280px;}
+    .slide-menu .nav { opacity: 1;}
+}
+@media only screen and (max-width: 1280px) { }
+@media only screen and (max-width: 1279px) { 
+    .table-scroll-md { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-md table { width: 1280px;}
+    
+    .customerOverview .customerContactInfo {margin-left: 25px;}
+    .customerOverview .customerLeft .cntBox ul li { width: 100% !important; margin-bottom: 15px !important;}
+    .customerOverview .customerLeft .cntBox ul li:last-child { margin-bottom: 0px !important;}
+}
+@media only screen and (max-width: 1180px) { }
+@media only screen and (max-width: 1170px) { }
+@media only screen and (max-width: 1024px) { }
+@media only screen and (max-width: 1023px) { 
+    .table-scroll-sm { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-sm table { width: 1024px;}
+
+    .rdecentOrdersBox-db table th:nth-child(3),
+    .rdecentOrdersBox-db table td:nth-child(3),
+    .rdecentOrdersBox-db table th:nth-child(5),
+    .rdecentOrdersBox-db table td:nth-child(5),
+    .rdecentOrdersBox-db table th:nth-child(9),
+    .rdecentOrdersBox-db table td:nth-child(9) { display: block;}
+    
+    /* Responsive Table */
+    .rdecentOrdersBox-db table tr { display: flex; flex-wrap: wrap; padding: 10px;}
+    .rdecentOrdersBox-db table tr.evenRow { background-color: var(--lightGrayColor);}
+    .rdecentOrdersBox-db table tr.firstTr { display: none;}
+    .rdecentOrdersBox-db table tr td { border: 0 none; position: relative; padding: 30px 5px 5px 10px; color:var(--titleColor);}
+    .rdecentOrdersBox-db table tr td::before { display: block;}
+    .rdecentOrdersBox-db table td:nth-child(1) { width: 25%; color:var(--primaryColor);}
+    .rdecentOrdersBox-db table td:nth-child(2),
+    .rdecentOrdersBox-db table td:nth-child(3) { width: 37%;}
+    .rdecentOrdersBox-db table td:nth-child(4),
+    .rdecentOrdersBox-db table td:nth-child(5),
+    .rdecentOrdersBox-db table td:nth-child(6),
+    .rdecentOrdersBox-db table td:nth-child(7),
+    .rdecentOrdersBox-db table td:nth-child(8) { width: 25%;}
+    .rdecentOrdersBox-db table td:nth-child(9) { width: 25%; font-weight: 500; color:var(--titleColor);}
+
+    .inventoryStockBox-db table tr { display: flex; flex-wrap: wrap; padding: 10px;}
+    .inventoryStockBox-db table tr.evenRow { background-color: var(--lightGrayColor);}
+    .inventoryStockBox-db table tr.firstTr { display: none;}
+    .inventoryStockBox-db table tr td { border: 0 none; position: relative; padding: 30px 5px 5px 10px; color:var(--titleColor);}
+    .inventoryStockBox-db table tr td::before { display: block;}
+
+    .inventoryStockBox-db table td:nth-child(1) { width: 33.33%; color:var(--primaryColor);}
+    .inventoryStockBox-db table td:nth-child(2),
+    .inventoryStockBox-db table td:nth-child(3),
+    .inventoryStockBox-db table td:nth-child(4),
+    .inventoryStockBox-db table td:nth-child(5),
+    .inventoryStockBox-db table td:nth-child(6) { width: 33.33%;}
+    
+}
+@media only screen and (max-width: 991px)  { 
+    .customerOverview .customerLeft .cntBox.otherBox ul li { width: calc(100% / 3) !important; margin-bottom: 0 !important;}
+    .customerOverview .customerLeft .cntBox.taxBox ul li { width: calc(100% / 2) !important;}
+    .customerOverview .customerLeft .cntBox.taxBox ul li:nth-last-child(2),
+    .customerOverview .customerLeft .cntBox.taxBox ul li:last-child { margin-bottom:0px !important;} 
+}
+@media only screen and (max-width: 960px)  { 
+    
+}
+@media only screen and (max-width: 959px)  {
+    .table-scroll-xs { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-xs table { width: 960px;}
+ }
+@media only screen and (max-width: 840px)  { /*iPad*/ 
+    .header .logoBox { left: 70px;}
+    .loginPage .formBox .welcome { width: 100%; background: url('../images/login-bg.svg') transparent; background-size: auto 100%;}
+    .loginPage .formBox .form { width: 100%;}
+    .loginPage .formBox .welcome .img { display: none;}
+
+    .loginPage { padding: 0 30px;}
+
+    .customerOverview .customerContactInfo {width: calc(100% - 200px);}
+    .customerOverview .customerContactInfo ul li { width: 100%; float: left; margin-right: 0; margin-top: 8px; margin-bottom: 2px;}
+}
+@media only screen and (max-width: 830px)  { 
+    .loginPage .formBox { max-width: 410px;}
+}
+@media only screen and (max-width: 800px)  { }
+@media only screen and (max-width: 768px)  { }
+@media only screen and (max-width: 767px)  { 
+    .table-scroll-xxs { width: 100%; display: flex; flex-wrap: wrap; overflow-x: scroll;}
+    .table-scroll-xxs table { width: 768px;}
+
+    .popupBox .popupBg.large { margin-left:-47%;}
+
+    .loginPage .loginImg { width: 20%;}
+    .loginPage .loginCnt { width: 80%;}
+}
+@media only screen and (max-width: 640px)  { }
+@media only screen and (max-width: 639px)  { 
+    .loginPage { flex: none; background-color: #fafcff;}
+    .loginPage .loginImg { width: 100%; height:160px; background-size: cover;}
+    .loginPage .loginCnt { width: 100%; float: left;}
+    .loginPage .loginImg img { width: 180px;}
+
+    .rdecentOrdersBox-db table tr { padding: 10px 0;}
+    .rdecentOrdersBox-db table td:nth-child(1) { width: 100px;}
+    .rdecentOrdersBox-db table td:nth-child(2) { width: calc(100% - 100px);}
+    .rdecentOrdersBox-db table td:nth-child(3) { width: 100%; display: none;}
+    .rdecentOrdersBox-db table td:nth-child(4),
+    .rdecentOrdersBox-db table td:nth-child(5),
+    .rdecentOrdersBox-db table td:nth-child(6),
+    .rdecentOrdersBox-db table td:nth-child(7),
+    .rdecentOrdersBox-db table td:nth-child(8) { width: 50%;}
+    .rdecentOrdersBox-db table td:nth-child(9) { width: 50%; font-weight: 500; color:var(--titleColor);}
+
+    .inventoryStockBox-db table td:nth-child(1),
+    .inventoryStockBox-db table td:nth-child(2),
+    .inventoryStockBox-db table td:nth-child(3),
+    .inventoryStockBox-db table td:nth-child(4),
+    .inventoryStockBox-db table td:nth-child(5),
+    .inventoryStockBox-db table td:nth-child(6) { width: 50%;}
+
+    .customerOverview .customerContactInfo {width: 100%;}
+}
+@media only screen and (max-width: 480px)  { 
+    .inner-content { padding: 20px;}
+
+    .customerOverview .customerContactInfo {margin-left: 25px;}
+    .customerOverview .customerLeft .cntBox.otherBox ul li,
+    .customerOverview .customerLeft .cntBox.taxBox ul li { width: 100% !important; margin-bottom: 15px !important;}
+    .customerOverview .customerLeft .cntBox.taxBox ul li:last-child,
+    .customerOverview .customerLeft .cntBox.otherBox ul li:last-child { margin-bottom: 0px !important;}
+}
+@media only screen and (max-width: 479px)  { }
+@media only screen and (max-width: 428px)  { }
+@media only screen and (max-width: 427px)  { }
+@media only screen and (max-width: 414px)  { }
+@media only screen and (max-width: 410px)  { }
+@media only screen and (max-width: 400px)  { }
+@media only screen and (max-width: 360px)  { }
+@media only screen and (max-width: 320px)  { }

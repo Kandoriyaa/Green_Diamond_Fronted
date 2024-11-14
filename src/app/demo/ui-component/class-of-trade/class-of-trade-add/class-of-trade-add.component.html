@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h1 *ngIf="!isEditMode">Add Class Of Trade</h1>
+    <h1 *ngIf="isEditMode">Edit Class Of Trade</h1>
+    <button (click)="activeModal.dismiss('Cross click')" aria-label="Close" class="btn-close" type="button"></button>
+</div>
+<div class="modal-body">
+    <div class="card-body tenantInfoAdd">
+        <div class="card-body">
+            <form [formGroup]="classtradeForm" (ngSubmit)="saveClassOfTrade()">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+                        <label class="form-label" for="tradeCode">Trade Code</label>
+                        <app-from-number-input [required]="true"
+                                                 [submitted]="submitted"
+                                                 [maxLength]="3"
+                                                 maxLengthMessage="Trade Code Only exceed 3 characters And Numarical Values." 
+                                                 formControlName="tradeCode"
+                                                 placeholder="Trade Code"
+                                                 requiredMessage="Trade Code is required">
+                        </app-from-number-input>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+                        <label class="form-label" for="tradeDesc">Description</label>
+                        <app-form-textarea-input [required]="true"
+                                                 [submitted]="submitted"
+                                                 [maxLength]="30"
+                                                 maxLengthMessage="Discription Only exceed 30 characters." 
+                                                 formControlName="tradeDesc"
+                                                 placeholder="Trade Description"
+                                                 requiredMessage="Trade Description is required">
+                        </app-form-textarea-input>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+                        <div class="form-check custom-checkbox">
+                            <input class="form-check-input" formControlName="isActive" type="checkbox">
+                            <label class="form-check-label">Status?</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

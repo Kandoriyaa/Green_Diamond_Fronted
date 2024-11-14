@@ -1,0 +1,52 @@
+<div class="slideMenu ">
+    <div class="nav">
+        <div class="accordion-flush" id="navMenu">
+            <!-- Dashboard -->
+            <div class="accordion-item">
+                <a [ngClass]="{'active': isMainActive('/dashboard')}" class="acclink" routerLink="/dashboard"
+                    routerLinkActive="active">
+                    <i class="bi bi-speedometer2 icon-18"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+            <div class="accordion-item subCntMenu">
+                <a [ngClass]="{'active': isMainActive('/ui-component')}" aria-expanded="false" class="acclink collapsed"
+                    data-bs-target="#Preferences" data-bs-toggle="collapse">
+                    <i class="bi bi-gear icon-18"></i>
+                    <span>Preferences</span>
+                </a>
+                <div [ngClass]="{'show': isMainActive('/ui-componet')}" class="accordion-collapse collapse"
+                    data-bs-parent="#navMenu" id="Preferences">
+                    <ul class="sub-menu">
+                        <li><a [ngClass]="{'active': isSubMenuActive('/ui-componet/class-of-trade')}"
+                                routerLink='/ui-componet/class-of-trade/list'>class-of-trade</a></li>
+                        <li><a [ngClass]="{'active': isSubMenuActive('/ui-component/clothe-display')}"
+                                routerLink='/ui-componet/clothe-display/list'>Category</a></li>
+                        <li><a [ngClass]="{'active': isSubMenuActive('/ui-component/typography')}"
+                               routerLink='/ui-componet/typography/list'>typography</a></li>
+                               <li><a [ngClass]="{'active': isSubMenuActive('/ui-component/ui-color')}"
+                                routerLink='/ui-componet/ui-color/list'>ui-color</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Vender -->
+            <div class="accordion-item">
+                <a [ngClass]="{'active': isMainActive('/other')}" class="acclink" routerLink="/other"
+                    routerLinkActive="active">
+                    <i class="bi bi-person icon-18"></i>
+                    <span>other</span>
+                </a>
+            </div>
+            
+            <div class="accordion-item">
+                <a [ngClass]="{'active': isMainActive('/customer')}" class="acclink" routerLink="/customer"
+                    routerLinkActive="active">
+                    <i class="bi bi-person icon-18"></i>
+                    <span>Customer</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

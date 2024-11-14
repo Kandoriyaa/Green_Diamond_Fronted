@@ -1,0 +1,78 @@
+<div class="inner-content">
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title d-flex justify-content-between align-items-center mb-4">
+                <h1>Clothe Display</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-4 ">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-flex d-flex justify-content-between align-items-center">
+                        <div class="searchBox">
+                            <button class="btn"><i class="fa fa-search"></i></button>
+                            <input (input)="onSearch($event)" class="form-control" placeholder="Search clothe Name"
+                                type="search" />
+                        </div>
+                        <div class="btnBoxCard">
+                            <a class="btn btn-primary btn-sm" href='/ui-componet/clothe-display/add'>Add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>clotheName</th>
+                            <th>price</th>
+                            <th>discription</th>
+                            <th>quantity</th>
+                            <th>Discount</th>
+                            <th>typeOfMaterial</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @for (clothe of clotheDisplayList.clothedisplayDtoinfo; track clothe.id; let i = $index) {
+                                <tr>
+                                    <td class="profileBoxTbl">
+                                        <img [src]="clothe.photo" height="50px" width="50px" />
+                                    </td>
+                                    <td>{{ clothe.clotheName }}</td>
+                                    <td>{{ clothe.price }}</td>
+                                    <td>{{ clothe.discription }}</td>
+                                    <td>{{ clothe.quantity }}</td>
+                                    <td>{{ clothe.discount }}</td>
+                                    <td>{{ clothe.typeOfMaterial }}</td>
+                                    <td>
+                                        <div class="tblAction">
+                                            <a (click)="editRecord(clothe.id)"><i class="bi bi-pencil"></i></a>
+                                            <a (click)="deleteRecord(clothe.id)"><i class="bi bi-trash3"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            } @empty {
+                                <tr>
+                                    <td colspan="4" style="text-align: center">No record found</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between p-2">
+                        <app-page-size (pageSizeChange)="onPageSizeChange($event)" [defaultPageSize]="pageSize"
+                            [isDisabled]="clotheDisplayList.totalRecords === 0">
+                        </app-page-size>
+                        <ngb-pagination (pageChange)="onPageChange($event)" [(page)]="page"
+                            [collectionSize]="clotheDisplayList.totalRecords" [pageSize]="pageSize">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

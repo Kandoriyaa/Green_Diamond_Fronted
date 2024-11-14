@@ -1,0 +1,7 @@
+::ng-deep body.swal2-height-auto {
+    height: 100% !important;
+}
+
+::ng-deep .ng-toggle-switch-input[aria-checked="true"]+ ::ng-deep .ng-toggle-switch-core {
+    background-color: #5748e7 !important;
+}
